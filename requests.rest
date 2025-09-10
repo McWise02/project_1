@@ -1,0 +1,4 @@
+## Get contact by ID example 
+GET https://cse-341-project-1-8fac.onrender.com/contacts/68bf18ac375e3a36946fe918/
+## Get all contacts
+GET https://cse-341-project-1-8fac.onrender.com/contacts/
