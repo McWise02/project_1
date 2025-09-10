@@ -5,3 +5,5 @@ const router = new express.Router()
 
 router.get("/", contactsController.getAllContacts);
 router.get("/:id", contactsController.getContact);
+
+module.exports = router;

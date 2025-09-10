@@ -1,11 +1,12 @@
 const { getDb } = require("./connect");
+const { ObjectId } = require("mongodb");
 
 async function get(id) {
   const db = getDb();
-
+  console.log(id);
   const result = await db
     .collection("contacts")
-    .findOne({ _id: id }); // adjust if needed
+    .findOne({ _id: new ObjectId(id) });
 
   console.log("DB result:", result);
   return result;
@@ -16,7 +17,7 @@ async function getAll() {
   console.log("It's working");
 
   const result = await db
-    .collection("alldata")
+    .collection("contacts")
     .find()
     .toArray();
 
