@@ -25,4 +25,41 @@ async function getAll() {
   return result;
 }
 
-module.exports = { get, getAll };
+
+async function create(data) {
+  const db = getDb();
+  console.log(id);
+  const result = await db
+    .collection("contacts")
+    .insertOne(data);
+
+  console.log("DB result:", result);
+  return result;
+}
+
+async function update(id, data) {
+  const db = getDb();
+
+  const result = await db
+    .collection("contacts")
+    .updateOne(
+      { _id: new ObjectId(id) }, 
+      { $set: data }             
+    );
+
+  console.log("DB result:", result);
+  return result;
+}
+
+async function deleteOne(id) {
+  const db = getDb();
+  console.log(id);
+  const result = await db
+    .collection("contacts")
+    .deleteOne(id);
+
+  console.log("DB result:", result);
+  return result;
+}
+
+module.exports = { get, getAll, update, create, deleteOne };
