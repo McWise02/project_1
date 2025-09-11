@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config(); // load .env into process.env
 const app = express();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+
 const mongodb = require('./database/connect');
 
 const contactRoutes = require('./routes/contacts');
@@ -14,7 +17,8 @@ app
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
   })
-  .use('/contacts', contactRoutes);
+  .use('/contacts', contactRoutes)
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
   
 const port = process.env.PORT || 3000;  // fallback for local dev
