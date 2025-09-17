@@ -28,7 +28,6 @@ async function getAll() {
 
 async function create(data) {
   const db = getDb();
-  console.log(id);
   const result = await db
     .collection("contacts")
     .insertOne(data);

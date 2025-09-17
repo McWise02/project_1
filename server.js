@@ -11,6 +11,10 @@ const contactRoutes = require('./routes/contacts');
 
 
 app.use(express.json());
+app.use((req, _res, next) => {
+  console.log('REQ', req.method, req.originalUrl);
+  next();
+});
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
@@ -19,6 +23,8 @@ app
   })
   .use('/contacts', contactRoutes)
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 
   
 const port = process.env.PORT || 3000;  // fallback for local dev

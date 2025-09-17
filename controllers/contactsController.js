@@ -15,6 +15,7 @@ const getAllContacts = async (req, res, next) => {
 
 const getContact = async (req, res, next) => {
     try {
+      console.log('RECEIVED')
         const contactId = req.params.id;
         var data = await database.get(contactId);
         console.log(data);
@@ -25,9 +26,12 @@ const getContact = async (req, res, next) => {
 };
 
 const createContact = async (req, res, next) => {
+  console.log("Received");
   try {
     const data = req.body;
-    if (contactsValidator(data)) {
+    console.log("Received data:", data);
+    if (contactsValidator.validateCreateContact(data)) {
+      console.log("Data is valid:", data);
       var result = await database.create(data)
       res.status(200).json(result)
     } else {
@@ -43,7 +47,7 @@ const updateContact = async (req, res, next) => {
     const contactId = req.params.id;
     const data = req.body;
 
-    const updateData = validateUpdateContact(data);
+    const updateData = contactsValidator.validateUpdateContact(data);
     if (updateData) {
       const result = await database.update(contactId, updateData);
       if (result.matchedCount === 0) {
