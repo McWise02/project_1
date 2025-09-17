@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/": {
+    "/contacts/": {
       "get": {
         "description": "",
         "responses": {
@@ -24,7 +24,7 @@
         }
       }
     },
-    "/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -45,7 +45,7 @@
         }
       }
     },
-    "/create": {
+    "/contacts/create": {
       "post": {
         "description": "",
         "responses": {
@@ -58,7 +58,7 @@
         }
       }
     },
-    "/update/{id}": {
+    "/contacts/update/{id}": {
       "post": {
         "description": "",
         "parameters": [
@@ -82,7 +82,7 @@
         }
       }
     },
-    "/delete/{id}": {
+    "/contacts/delete/{id}": {
       "post": {
         "description": "",
         "parameters": [

@@ -2,3 +2,30 @@
 GET https://cse-341-project-1-8fac.onrender.com/contacts/68bf18ac375e3a36946fe918/
 ## Get all contacts
 GET https://cse-341-project-1-8fac.onrender.com/contacts/
+
+### Create a new contact
+POST https://cse-341-project-1-8fac.onrender.com/contacts/create
+Content-Type: application/json
+{
+  "firstName": "Micah",
+  "lastName": "Brown",
+  "email": "micah@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "1995-05-12"
+}
+
+###
+
+### Update a contact
+POST https://cse-341-project-1-8fac.onrender.com/contacts/update/68bf18ac375e3a36946fe918
+Content-Type: application/json
+
+{
+  "firstName": "Michael",
+  "favoriteColor": "Green"
+}
+
+###
+
+### Delete a contact
+POST https://cse-341-project-1-8fac.onrender.com/contacts/delete/68bf191c375e3a36946fe919
