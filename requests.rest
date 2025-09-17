@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
   "firstName": "Dave",
-  "lastName": "Woman",
+  "lastName": "waaa",
   "email": "michael@example.com",
   "favoriteColor": "Green",
   "birthday": "1995-05-12"
@@ -31,4 +31,4 @@ Content-Type: application/json
 ###
 
 ### Delete a contact
-DELETE https://cse-341-project-1-8fac.onrender.com/contacts/delete/68bf191c375e3a36946fe919/
+DELETE https://cse-341-project-1-8fac.onrender.com/contacts/delete/68cb0dcc5ec3d18e5b8ae44e/

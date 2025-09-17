@@ -55,7 +55,7 @@ async function deleteOne(id) {
   console.log(id);
   const result = await db
     .collection("contacts")
-    .deleteOne(id);
+    .deleteOne({ _id: new ObjectId(id) },);
 
   console.log("DB result:", result);
   return result;
