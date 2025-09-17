@@ -17,15 +17,18 @@ Content-Type: application/json
 ###
 
 ### Update a contact
-POST https://cse-341-project-1-8fac.onrender.com/contacts/update/68bf18ac375e3a36946fe918/
+PUT https://cse-341-project-1-8fac.onrender.com/contacts/update/68cb0dcc5ec3d18e5b8ae44e/
 Content-Type: application/json
 
 {
-  "firstName": "Michael",
-  "favoriteColor": "Green"
+  "firstName": "Dave",
+  "lastName": "Woman",
+  "email": "michael@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1995-05-12"
 }
 
 ###
 
 ### Delete a contact
-POST https://cse-341-project-1-8fac.onrender.com/contacts/delete/68bf191c375e3a36946fe919/
+DELETE https://cse-341-project-1-8fac.onrender.com/contacts/delete/68bf191c375e3a36946fe919/

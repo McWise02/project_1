@@ -4,8 +4,8 @@ const router = new express.Router()
 
        
 router.post('/create', contactsController.createContact);      
-router.post('/update/:id', contactsController.updateContact);  
-router.post('/delete/:id', contactsController.deleteContact); 
+router.put('/update/:id', contactsController.updateContact);  
+router.delete('/delete/:id', contactsController.deleteContact); 
 router.get('/', contactsController.getAllContacts);      
 router.get('/:id', contactsController.getContact);             
 
